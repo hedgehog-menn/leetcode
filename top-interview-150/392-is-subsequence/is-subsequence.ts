@@ -21,18 +21,18 @@ function isSubsequence(s: string, t: string): boolean {
     }
 
     count = 0;
-    let t_revesed = t.split('').reverse().join('');
-    const sList_reversed = s.split('').reverse();
+    let tRevesed = t.split('').reverse().join('');
+    const sListReversed = s.split('').reverse();
     let reversedRound = true;
 
-    for (let i = 0; i < sList_reversed.length; i++) {
-        if (t_revesed.indexOf(sList_reversed[i]) < count) {
+    for (let i = 0; i < sListReversed.length; i++) {
+        if (tRevesed.indexOf(sListReversed[i]) < count) {
             reversedRound = false;
         } else {
-            count = t_revesed.indexOf(sList_reversed[i]);
-            t_revesed = t_revesed.slice(0, count) + t_revesed.slice(count + 1);
+            count = tRevesed.indexOf(sListReversed[i]);
+            tRevesed = tRevesed.slice(0, count) + tRevesed.slice(count + 1);
 
-            sList_reversed.shift();
+            sListReversed.shift();
             --i;
         }
     }
