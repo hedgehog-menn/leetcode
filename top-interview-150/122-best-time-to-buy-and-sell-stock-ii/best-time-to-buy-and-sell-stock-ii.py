@@ -6,6 +6,7 @@ class Solution(object):
         """
         # Sell imdiedately when profit == max profit
         profit = 0
+        """
         buyPrice = prices[0]
         for currentPrice in prices:
             if currentPrice < buyPrice:
@@ -13,6 +14,12 @@ class Solution(object):
             else:
                 profit += currentPrice - buyPrice
                 buyPrice = currentPrice
+        """
+
+        for i in range(1, len(prices)):
+            if prices[i - 1] < prices[i]:
+                profit += prices[i] - prices[i - 1]
+
         return profit
                 
 
