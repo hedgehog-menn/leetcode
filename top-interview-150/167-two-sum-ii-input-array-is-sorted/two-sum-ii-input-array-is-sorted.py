@@ -20,9 +20,9 @@ class Solution:
 
         while i < j:
             sum = numbers[i] + numbers[j]
+            if sum == target:
+                return [i+1, j+1]
             if sum < target:
                 i += 1
             if sum > target:
                 j -= 1
-            if sum == target:
-                return [i+1, j+1]
