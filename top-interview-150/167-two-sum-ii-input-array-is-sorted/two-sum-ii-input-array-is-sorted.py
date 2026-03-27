@@ -8,5 +8,5 @@ class Solution:
                 return [left+1, right+1]
             if numbers[left] + numbers[right] < target:
                 left += 1
-            if numbers[left] + numbers[right] > target:
+            else:
                 right -= 1
