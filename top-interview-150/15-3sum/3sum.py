@@ -26,6 +26,5 @@ class Solution(object):
                     j += 1
                 else:
                     k -= 1
-                    k
 
         return answerList
