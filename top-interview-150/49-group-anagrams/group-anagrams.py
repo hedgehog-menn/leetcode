@@ -3,7 +3,7 @@ class Solution:
         d = {}
         for val in strs:
             key = "".join(sorted(val))
-            if key in d.keys():
+            if key in d:
                 d[key].append(val)
             else:
                 d[key] = [val]
