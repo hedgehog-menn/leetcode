@@ -4,12 +4,12 @@ class Solution:
         prev = intervals[0]
         result = []
 
-        for interval in intervals[1:]:
-            if interval[0] <= prev[1]:
-                prev[1] = max(interval[1], prev[1])
+        for i in range(1, len(intervals)):
+            if intervals[i][0] <= prev[1]:
+                prev[1] = max(intervals[i][1], prev[1])
             else:
                 result.append(prev)
-                prev = interval
+                prev = intervals[i]
  
         result.append(prev)
         return result
