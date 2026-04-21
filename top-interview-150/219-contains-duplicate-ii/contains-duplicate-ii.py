@@ -1,5 +1,8 @@
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        if len(nums) == len(set(nums)):
+            return False
+
         window = set()
         i = 0
         for j in range(len(nums)):
