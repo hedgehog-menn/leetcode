@@ -3,5 +3,4 @@ class Solution:
         if x < 0:
             return False
 
-        s = str(x)
-        return s == s[::-1]
+        return str(x) == str(x)[::-1]
