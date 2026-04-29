@@ -18,7 +18,7 @@ class RandomizedSet:
             return False
 
     def getRandom(self) -> int:
-        return random.choice(list(self.my_set))
+        return random.sample(list(self.my_set), 1)[0]
 
 
 # Your RandomizedSet object will be instantiated and called as such:
