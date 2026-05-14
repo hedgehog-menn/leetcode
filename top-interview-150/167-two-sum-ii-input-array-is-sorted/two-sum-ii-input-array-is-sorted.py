@@ -1,13 +1,8 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        left = 0
-        right = len(numbers) - 1
-
-        while left < right:
-            sum = numbers[left] + numbers[right]
-            if sum == target:
-                return [left+1, right+1]
-            if sum > target:
-                right -= 1
+        hashmap = {}
+        for i, n in enumerate(numbers):
+            if n in hashmap:
+                return [hashmap[n] + 1, i + 1]
             else:
-                left += 1
+                hashmap[target - n] = i
