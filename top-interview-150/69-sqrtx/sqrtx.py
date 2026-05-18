@@ -1,15 +1,24 @@
-class Solution:
-    def mySqrt(self, x: int) -> int:
-        if x < 2: 
-            return x
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x == 0: 
+            return 0
 
-        # considering the equation values 
-        y = x
-        z = (y + (x/y)) / 2
+        l, r = 1, x
+        res = 0
 
-        while abs(y - z) >= 1:
-            y = z
-            z = (y + (x/y)) / 2
+        while l <= r:
+            m = (l + r) // 2
+            if m ** 2 > x:
+                r = m - 1
+            elif m ** 2 < x:
+                l = m + 1
+                res = m
+            else:
+                return m
 
-        return int(z)
+        return res
         
