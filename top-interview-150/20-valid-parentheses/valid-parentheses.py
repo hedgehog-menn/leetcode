@@ -1,23 +1,20 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        if len(s) % 2 != 0:
-            return False
- 
-        d = {
-            '(': ')',
-            '{': '}',
-            '[': ']'
+        stack = []
+        closeToOpen = {
+            ')': '(',
+            ']': '[',
+            '}': '{'
         }
-        buff = []
 
-        for i in range(len(s)):
-            if s[i] in d:
-                buff.append(d[s[i]])
-            elif len(buff) == 0:
-                return False
-            elif buff[-1] == s[i]:
-                buff.pop()
+        for c in s:
+            if c in closeToOpen:
+                if stack and stack[-1] == closeToOpen[c]:
+                    stack.pop()
+                else:
+                    return False
             else:
-                return False
+                stack.append(c)
 
-        return len(buff) == 0
+        return not stack
+        
