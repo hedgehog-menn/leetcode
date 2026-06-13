@@ -6,4 +6,4 @@ class Solution:
                 return [d[num], index]
             else:
                 d[target - num] = index
-        return
+        return []
