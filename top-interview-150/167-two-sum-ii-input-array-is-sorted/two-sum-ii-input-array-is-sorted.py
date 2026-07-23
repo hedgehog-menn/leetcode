@@ -4,5 +4,5 @@ class Solution:
         for i, n in enumerate(numbers):
             if n in hashmap:
                 return [hashmap[n] + 1, i + 1]
-            else:
-                hashmap[target - n] = i
+
+            hashmap[target - n] = i
