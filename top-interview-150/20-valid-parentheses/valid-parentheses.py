@@ -3,8 +3,8 @@ class Solution:
         stack = []
         closeToOpen = {
             ')': '(',
-            ']': '[',
-            '}': '{'
+            '}': '{',
+            ']': '['
         }
 
         for c in s:
@@ -13,8 +13,8 @@ class Solution:
                     stack.pop()
                 else:
                     return False
+            
             else:
                 stack.append(c)
 
         return not stack
-        
